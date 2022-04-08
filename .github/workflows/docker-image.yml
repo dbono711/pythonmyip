@@ -18,9 +18,13 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
+      - name: Set tag output for release
+        id: rel
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      
       - name: Build and push Docker image
         uses: docker/build-push-action@v2.10.0
         with:
           context: .
           push: true
-          tags: dbono711/pythonmyip:latest
+          tags: dbono711/pythonmyip:latest, dbono711/pythonmyip:${{ steps.rel.outputs.tag }}
