@@ -1,0 +1,12 @@
+[project]
+name = "pythonmyip"
+version = "0.1.0"
+description = "Dockerized Python application that prints your Public IP"
+readme = "README.md"
+authors = [
+    {name = "Darren Bono", email = "darren.bono@att.net"},
+]
+requires-python = ">=3.13.1"
+dependencies = [
+    "requests>=2.32.3",
+]

@@ -1,6 +1,5 @@
 # Virtual environment directories
 **/.venv/*
-Pipfile.lock
 
 # System files
 **/*DS_Store*
